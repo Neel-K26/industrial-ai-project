@@ -1,0 +1,1 @@
+Figure 4. Distribution of prediction error (predicted minus true RUL) per experiment; E1's errors sit almost entirely below zero (systematic early bias from its near-constant predictions), while E2/E3 are tightly centered near zero and E4 shows the widest spread in both directions.

@@ -1,0 +1,1 @@
+Figure 6. Composite profile across four min-max-normalized axes (RMSE, MAE, and PHM score inverted so outward is better, plus a parameter-count-weighted training-efficiency axis); no single experiment's polygon dominates on all four axes, illustrating the accuracy/parameter-cost trade-off between trained baselines and the zero-shot foundation model.

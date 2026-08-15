@@ -1,0 +1,1 @@
+Figure 5. RMSE vs. degree of task-specific supervision, bubble area proportional to PHM08 risk score; the current gap between fully-trained attention models and the zero-shot forecaster spans roughly 28-31 RMSE cycles and a >50x difference in PHM risk, the target for future fine-tuned/probed TSFM experiments to close.

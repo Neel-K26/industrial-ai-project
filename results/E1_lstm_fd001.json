@@ -1,0 +1,23 @@
+{
+  "experiment_id": "E1",
+  "model": "lstm_baseline",
+  "dataset": "cmapss",
+  "fd_subset": "FD001",
+  "seed": 42,
+  "hyperparameters": {
+    "sequence_length": 30,
+    "hidden_size": 64,
+    "num_layers": 2,
+    "dropout": 0.2,
+    "batch_size": 256,
+    "learning_rate": 0.001,
+    "epochs": 50,
+    "max_rul": 125
+  },
+  "metrics": {
+    "rmse": 40.532047271728516,
+    "mae": 35.096893310546875,
+    "phm_score": 18182.32421875
+  },
+  "n_test_engines": 100
+}

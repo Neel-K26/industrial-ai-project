@@ -1,0 +1,1 @@
+Figure 3. Predicted vs. true RUL for all 100 FD001 test engines, colored by absolute error; the LSTM (E1) collapses toward a near-constant prediction (negative $R^2$), while E2/E3 track the diagonal closely and E4's zero-shot heuristic shows the widest scatter at high true RUL.

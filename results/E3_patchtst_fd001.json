@@ -1,0 +1,28 @@
+{
+  "experiment_id": "E3",
+  "model": "patchtst_baseline",
+  "dataset": "cmapss",
+  "fd_subset": "FD001",
+  "seed": 42,
+  "hyperparameters": {
+    "sequence_length": 30,
+    "patch_len": 6,
+    "stride": 3,
+    "num_patches": 9,
+    "d_model": 64,
+    "nhead": 4,
+    "num_encoder_layers": 2,
+    "dim_feedforward": 128,
+    "dropout": 0.1,
+    "batch_size": 256,
+    "learning_rate": 0.001,
+    "epochs": 50,
+    "max_rul": 125
+  },
+  "metrics": {
+    "rmse": 14.83366870880127,
+    "mae": 11.972315788269043,
+    "phm_score": 385.594482421875
+  },
+  "n_test_engines": 100
+}

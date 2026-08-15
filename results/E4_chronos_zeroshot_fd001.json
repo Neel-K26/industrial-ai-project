@@ -1,0 +1,25 @@
+{
+  "experiment_id": "E4",
+  "model": "chronos_zeroshot",
+  "dataset": "cmapss",
+  "fd_subset": "FD001",
+  "seed": 42,
+  "chronos_model_id": "amazon/chronos-t5-small",
+  "hyperparameters": {
+    "context_length": 30,
+    "forecast_horizon": 1,
+    "num_samples": 50,
+    "interval_quantiles": [
+      0.1,
+      0.9
+    ],
+    "rul_mapping": "unsupervised: per-channel min-max normalized Chronos forecast interval width, averaged across channels, inverse min-max scaled to [0, max_rul] using the forecast population itself (no calibration engines, no labels used to fit the mapping)",
+    "max_rul": 125
+  },
+  "metrics": {
+    "rmse": 45.373600006103516,
+    "mae": 39.159828186035156,
+    "phm_score": 23919.400390625
+  },
+  "n_test_engines": 100
+}

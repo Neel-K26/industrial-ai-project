@@ -1,0 +1,1 @@
+Figure 2. PHM08 asymmetric risk score by experiment (log scale, color-coded by severity band); the recurrent baseline and the zero-shot forecaster both carry order-of-magnitude more late-prediction risk than either trained attention-based model.

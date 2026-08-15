@@ -1,0 +1,25 @@
+{
+  "experiment_id": "E2",
+  "model": "transformer_baseline",
+  "dataset": "cmapss",
+  "fd_subset": "FD001",
+  "seed": 42,
+  "hyperparameters": {
+    "sequence_length": 30,
+    "d_model": 64,
+    "nhead": 4,
+    "num_encoder_layers": 2,
+    "dim_feedforward": 128,
+    "dropout": 0.1,
+    "batch_size": 256,
+    "learning_rate": 0.001,
+    "epochs": 50,
+    "max_rul": 125
+  },
+  "metrics": {
+    "rmse": 14.6184720993042,
+    "mae": 10.854952812194824,
+    "phm_score": 412.3164978027344
+  },
+  "n_test_engines": 100
+}

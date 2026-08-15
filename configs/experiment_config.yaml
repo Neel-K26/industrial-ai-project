@@ -1,0 +1,64 @@
+# Master experiment configuration for AMMPM (Agentic Multi-Machine Predictive
+# Maintenance using Time-Series Foundation Models for Explainable and
+# Trustworthy RUL Prediction).
+#
+# This file is the single source of truth for reproducibility across all
+# experiments (E1-E8): it fixes the random seed, enumerates the industrial
+# asset datasets under study, the experiment IDs, the evaluation metrics used
+# to judge predictive and explanatory quality, and the model families
+# benchmarked for Remaining Useful Life (RUL) estimation.
+
+# Global random seed. Propagated to numpy, torch, and python's random module
+# via src/utils/seed.py to guarantee bit-reproducible experiment runs.
+random_seed: 42
+
+# Industrial datasets used to validate multi-machine generalization.
+# - cmapss: NASA turbofan engine degradation simulation (C-MAPSS)
+# - xjtu_sy: XJTU-SY rolling element bearing run-to-failure dataset
+# - ai4i_2020: AI4I 2020 synthetic predictive maintenance dataset
+datasets:
+  - cmapss
+  - xjtu_sy
+  - ai4i_2020
+
+# Identifiers for the eight planned experiments in the study (e.g. baseline
+# comparison, agentic orchestration ablation, uncertainty calibration,
+# cross-machine transfer, explainability stability, etc.). Each experiment
+# script/notebook should reference its ID here for logging and results
+# bookkeeping.
+experiment_ids:
+  - E1
+  - E2
+  - E3
+  - E4
+  - E5
+  - E6
+  - E7
+  - E8
+
+# Metrics used to evaluate RUL prediction quality, uncertainty, and
+# explanation trustworthiness.
+# - rmse / mae: point-prediction accuracy
+# - phm_score: asymmetric scoring function from the PHM08 challenge, penalizing
+#   late predictions (dangerous) more than early predictions (conservative)
+# - coverage: empirical coverage of predictive intervals against nominal level
+# - interval_width: sharpness of predictive (uncertainty) intervals
+# - shap_stability: consistency of SHAP-based feature attributions across
+#   seeds/runs, used as a proxy for explanation trustworthiness
+metrics:
+  - rmse
+  - mae
+  - phm_score
+  - coverage
+  - interval_width
+  - shap_stability
+
+# Model families benchmarked for RUL prediction, from classical sequence
+# models to time-series foundation models fine-tuned for this task.
+models:
+  - lstm
+  - gru
+  - tcn
+  - transformer
+  - patchtst
+  - chronos_finetune

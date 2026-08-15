@@ -1,0 +1,10 @@
+venv/
+*.so
+*.so.*
+__pycache__/
+.ipynb_checkpoints/
+data/raw/
+*.zip
+results/checkpoints/
+*.jar
+bfg-*.jar

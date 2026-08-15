@@ -1,0 +1,1 @@
+Figure 1. Test RMSE for each architecture family on C-MAPSS FD001 (100 test engines); attention-based models (E2, E3) approach the ~15-RMSE literature range, while the recurrent baseline (E1) and the zero-shot foundation model (E4) fall well short.
