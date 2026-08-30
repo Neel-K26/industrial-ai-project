@@ -1,0 +1,56 @@
+{
+  "experiment_id": "E5",
+  "model": "chronos_finetuned",
+  "dataset": "cmapss",
+  "fd_subset": "FD001",
+  "seed": 42,
+  "chronos_model_id": "amazon/chronos-t5-small",
+  "checkpoint_dir": "/home/bruce-wayne-2005/industrial-ai-project/results/checkpoints/chronos_finetuned",
+  "hyperparameters": {
+    "sequence_length": 30,
+    "prediction_length": 1,
+    "selected_sensors": [
+      "sensor_2",
+      "sensor_3",
+      "sensor_4",
+      "sensor_7",
+      "sensor_8",
+      "sensor_9",
+      "sensor_11",
+      "sensor_12",
+      "sensor_13",
+      "sensor_14",
+      "sensor_15",
+      "sensor_17",
+      "sensor_20",
+      "sensor_21"
+    ],
+    "frozen_layers": "encoder (6 of 12 transformer layers, 50%)",
+    "trainable_layers": "decoder + shared embedding",
+    "epochs": 20,
+    "learning_rate": 0.0001,
+    "batch_size": 8,
+    "examples_per_epoch": 3000,
+    "val_examples": 200,
+    "note": "Official scaled-up run (examples_per_epoch=3000), following an initial 800-example pilot (RMSE 25.31) whose validation loss plateaued/drifted up after ~epoch 10, indicating the training-set size (not epoch count) was the limiting factor. Still a fixed random subsample of the candidate window pool (not exhaustive windowing: the full pool is ~197,000 examples/epoch, estimated at 100+ CPU-hours) -- see notebook \u00a75 for pool sizes and rationale.",
+    "calib_fraction": 0.2,
+    "eval_fraction": 0.8,
+    "regression_head": "sklearn.Ridge",
+    "ridge_alpha": 1.0,
+    "num_forecast_samples": 20,
+    "max_rul": 125
+  },
+  "metrics": {
+    "rmse": 22.386669158935547,
+    "mae": 17.482341766357422,
+    "phm_score": 1319.19482421875
+  },
+  "supplementary_metrics_all_100_engines": {
+    "rmse": 20.697843551635742,
+    "mae": 15.885688781738281,
+    "phm_score": 1355.75927734375
+  },
+  "n_calib_engines": 20,
+  "n_eval_engines": 80,
+  "n_test_engines_total": 100
+}
