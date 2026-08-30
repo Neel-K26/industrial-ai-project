@@ -1,0 +1,1 @@
+Figure 14. Data flow through the 7-stage agentic pipeline for the 10-engine demonstration run (10/10 engines took the full path, 0/10 triggered the critical-failure shortcut straight to the decision agent); ribbon width is proportional to engine count.

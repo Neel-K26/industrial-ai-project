@@ -1,0 +1,1 @@
+Figure 12. Reliability diagram comparing nominal vs. empirical coverage; MC Dropout and the Deep Ensemble are evaluated across the full 10%-90% range since both yield a queryable predictive distribution, while Quantile Regression -- trained for only the 10th/50th/90th percentiles -- is shown as a single point at its one valid (80%) interval.

@@ -1,0 +1,1 @@
+Figure 11. Point estimate and 80% prediction interval from each UQ method for 3 test engines spanning the observed true-RUL range (low/median/high), against the true value (dashed red line).

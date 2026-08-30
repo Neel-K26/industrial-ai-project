@@ -1,0 +1,1 @@
+Figure 10. Empirical coverage of each UQ method's 80% prediction interval across all 100 FD001 test engines, against the nominal 80% target; a method above the line is over-covering (intervals wider than needed), below is under-covering (unreliable).

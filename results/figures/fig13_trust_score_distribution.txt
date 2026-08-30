@@ -1,0 +1,1 @@
+Figure 13. Trust score against true RUL for 10 representative FD001 test engines (2 early/4 mid/4 late degradation stage), colored by the decision agent's maintenance recommendation; low-RUL engines cluster toward urgent recommendations where trust remained high.

@@ -48,6 +48,20 @@ REPORTS_DIR: Path = PROJECT_ROOT / "reports"
 # (checkpoints + metrics + plots) can be archived per experiment run.
 CHECKPOINTS_DIR: Path = RESULTS_DIR / "checkpoints"
 
+# E2 Transformer (state_dict) and E7 Quantile Regression (state_dict) checkpoints,
+# trained once by notebooks/E8_langgraph_agentic_system.ipynb's bootstrap step and
+# loaded by src/agents/prediction_agent.py and src/agents/uncertainty_agent.py for
+# fast per-engine inference (no retraining inside the agent pipeline).
+E2_TRANSFORMER_CHECKPOINT: Path = CHECKPOINTS_DIR / "e2_transformer.pt"
+E7_QUANTILE_CHECKPOINT: Path = CHECKPOINTS_DIR / "e7_quantile_regressor.pt"
+
+# Reference artifacts for the agentic pipeline (src/agents/): a sample of training
+# windows for domain-shift (MMD) comparison, and a cached SHAP background sample.
+AGENTS_REFERENCE_DIR: Path = RESULTS_DIR / "agents_reference"
+TRAIN_DISTRIBUTION_REFERENCE_PATH: Path = AGENTS_REFERENCE_DIR / "train_distribution_reference.npz"
+SHAP_BACKGROUND_PATH: Path = AGENTS_REFERENCE_DIR / "shap_background.npz"
+CHANNEL_REFERENCE_STATS_PATH: Path = AGENTS_REFERENCE_DIR / "channel_reference_stats.npz"
+
 
 def ensure_dirs() -> None:
     """Create all project directories that are expected to exist at runtime.
@@ -70,5 +84,6 @@ def ensure_dirs() -> None:
         RESULTS_DIR,
         REPORTS_DIR,
         CHECKPOINTS_DIR,
+        AGENTS_REFERENCE_DIR,
     ):
         directory.mkdir(parents=True, exist_ok=True)

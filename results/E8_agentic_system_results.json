@@ -1,0 +1,276 @@
+{
+  "experiment_id": "E8",
+  "model": "langgraph_agentic_system",
+  "dataset": "cmapss",
+  "fd_subset": "FD001",
+  "seed": 42,
+  "pipeline": [
+    "sensor_validation",
+    "domain_shift",
+    "prediction",
+    "shap",
+    "uncertainty",
+    "decision"
+  ],
+  "conditional_edge": "sensor_validation -> decision (direct) if critical_failure, else -> domain_shift",
+  "n_engines": 10,
+  "engines": [
+    {
+      "engine_id": 51,
+      "stage": "early",
+      "true_rul": 114.0,
+      "rul_prediction": 105.96867370605469,
+      "trust_score": 75.0,
+      "maintenance_recommendation": "MONITOR CLOSELY",
+      "top3_sensors": [
+        "sensor_9",
+        "sensor_14",
+        "sensor_11"
+      ],
+      "prediction_interval": [
+        82.40108489990234,
+        126.57911682128906
+      ],
+      "interval_width": 44.17803192138672,
+      "domain_shift_score": 0.16,
+      "shift_detected": false,
+      "coverage_flag": true,
+      "validation_passed": true,
+      "critical_failure": false,
+      "errors": [],
+      "runtime_seconds": 0.0676567554473877
+    },
+    {
+      "engine_id": 89,
+      "stage": "early",
+      "true_rul": 125.0,
+      "rul_prediction": 116.15776824951172,
+      "trust_score": 75.0,
+      "maintenance_recommendation": "MONITOR CLOSELY",
+      "top3_sensors": [
+        "sensor_9",
+        "sensor_14",
+        "sensor_11"
+      ],
+      "prediction_interval": [
+        94.11077880859375,
+        127.02838134765625
+      ],
+      "interval_width": 32.9176025390625,
+      "domain_shift_score": 0.14,
+      "shift_detected": false,
+      "coverage_flag": true,
+      "validation_passed": true,
+      "critical_failure": false,
+      "errors": [],
+      "runtime_seconds": 0.03963971138000488
+    },
+    {
+      "engine_id": 84,
+      "stage": "mid",
+      "true_rul": 58.0,
+      "rul_prediction": 91.67461395263672,
+      "trust_score": 75.0,
+      "maintenance_recommendation": "MONITOR CLOSELY",
+      "top3_sensors": [
+        "sensor_9",
+        "sensor_13",
+        "sensor_8"
+      ],
+      "prediction_interval": [
+        55.26579284667969,
+        100.27351379394531
+      ],
+      "interval_width": 45.007720947265625,
+      "domain_shift_score": 0.54,
+      "shift_detected": false,
+      "coverage_flag": true,
+      "validation_passed": true,
+      "critical_failure": false,
+      "errors": [],
+      "runtime_seconds": 0.04371953010559082
+    },
+    {
+      "engine_id": 48,
+      "stage": "mid",
+      "true_rul": 92.0,
+      "rul_prediction": 112.90843200683594,
+      "trust_score": 75.0,
+      "maintenance_recommendation": "MONITOR CLOSELY",
+      "top3_sensors": [
+        "sensor_9",
+        "sensor_11",
+        "sensor_7"
+      ],
+      "prediction_interval": [
+        78.7180404663086,
+        126.17483520507812
+      ],
+      "interval_width": 47.45679473876953,
+      "domain_shift_score": 0.025,
+      "shift_detected": false,
+      "coverage_flag": true,
+      "validation_passed": true,
+      "critical_failure": false,
+      "errors": [],
+      "runtime_seconds": 0.04453468322753906
+    },
+    {
+      "engine_id": 15,
+      "stage": "mid",
+      "true_rul": 83.0,
+      "rul_prediction": 102.5452651977539,
+      "trust_score": 85.0,
+      "maintenance_recommendation": "MONITOR CLOSELY",
+      "top3_sensors": [
+        "sensor_11",
+        "sensor_7",
+        "sensor_20"
+      ],
+      "prediction_interval": [
+        65.86419677734375,
+        110.08296966552734
+      ],
+      "interval_width": 44.218772888183594,
+      "domain_shift_score": 0.485,
+      "shift_detected": false,
+      "coverage_flag": true,
+      "validation_passed": true,
+      "critical_failure": false,
+      "errors": [],
+      "runtime_seconds": 0.04517531394958496
+    },
+    {
+      "engine_id": 93,
+      "stage": "mid",
+      "true_rul": 85.0,
+      "rul_prediction": 54.07796859741211,
+      "trust_score": 100.0,
+      "maintenance_recommendation": "SCHEDULE WITHIN WEEK",
+      "top3_sensors": [
+        "sensor_11",
+        "sensor_4",
+        "sensor_7"
+      ],
+      "prediction_interval": [
+        48.180870056152344,
+        74.10230255126953
+      ],
+      "interval_width": 25.921432495117188,
+      "domain_shift_score": 0.75,
+      "shift_detected": false,
+      "coverage_flag": false,
+      "validation_passed": true,
+      "critical_failure": false,
+      "errors": [],
+      "runtime_seconds": 0.050728559494018555
+    },
+    {
+      "engine_id": 36,
+      "stage": "late",
+      "true_rul": 19.0,
+      "rul_prediction": 19.476743698120117,
+      "trust_score": 90.0,
+      "maintenance_recommendation": "IMMEDIATE ACTION",
+      "top3_sensors": [
+        "sensor_12",
+        "sensor_11",
+        "sensor_7"
+      ],
+      "prediction_interval": [
+        20.820531845092773,
+        34.73991394042969
+      ],
+      "interval_width": 13.919382095336914,
+      "domain_shift_score": 0.86,
+      "shift_detected": false,
+      "coverage_flag": false,
+      "validation_passed": true,
+      "critical_failure": false,
+      "errors": [],
+      "runtime_seconds": 0.04701495170593262
+    },
+    {
+      "engine_id": 91,
+      "stage": "late",
+      "true_rul": 38.0,
+      "rul_prediction": 27.99618148803711,
+      "trust_score": 100.0,
+      "maintenance_recommendation": "IMMEDIATE ACTION",
+      "top3_sensors": [
+        "sensor_11",
+        "sensor_13",
+        "sensor_12"
+      ],
+      "prediction_interval": [
+        22.148839950561523,
+        36.80464172363281
+      ],
+      "interval_width": 14.655801773071289,
+      "domain_shift_score": 0.915,
+      "shift_detected": false,
+      "coverage_flag": false,
+      "validation_passed": true,
+      "critical_failure": false,
+      "errors": [],
+      "runtime_seconds": 0.04776310920715332
+    },
+    {
+      "engine_id": 92,
+      "stage": "late",
+      "true_rul": 20.0,
+      "rul_prediction": 21.30461311340332,
+      "trust_score": 100.0,
+      "maintenance_recommendation": "IMMEDIATE ACTION",
+      "top3_sensors": [
+        "sensor_11",
+        "sensor_12",
+        "sensor_8"
+      ],
+      "prediction_interval": [
+        20.803380966186523,
+        34.75856018066406
+      ],
+      "interval_width": 13.955179214477539,
+      "domain_shift_score": 0.905,
+      "shift_detected": false,
+      "coverage_flag": false,
+      "validation_passed": true,
+      "critical_failure": false,
+      "errors": [],
+      "runtime_seconds": 0.04713606834411621
+    },
+    {
+      "engine_id": 76,
+      "stage": "late",
+      "true_rul": 10.0,
+      "rul_prediction": 1.94979989528656,
+      "trust_score": 100.0,
+      "maintenance_recommendation": "IMMEDIATE ACTION",
+      "top3_sensors": [
+        "sensor_11",
+        "sensor_9",
+        "sensor_4"
+      ],
+      "prediction_interval": [
+        1.0992586612701416,
+        6.5546393394470215
+      ],
+      "interval_width": 5.45538067817688,
+      "domain_shift_score": 0.905,
+      "shift_detected": false,
+      "coverage_flag": false,
+      "validation_passed": true,
+      "critical_failure": false,
+      "errors": [],
+      "runtime_seconds": 0.048499107360839844
+    }
+  ],
+  "acceptance_criteria": {
+    "all_engines_completed": true,
+    "trust_scores_vary": true,
+    "all_runtimes_under_30s": true,
+    "late_stage_flagged_or_urgent": true,
+    "no_llm_calls": true
+  }
+}

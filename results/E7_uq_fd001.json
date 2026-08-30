@@ -1,0 +1,62 @@
+{
+  "experiment_id": "E7",
+  "model": "uncertainty_quantification",
+  "base_architecture": "E2_transformer",
+  "dataset": "cmapss",
+  "fd_subset": "FD001",
+  "seed": 42,
+  "nominal_coverage": 0.8,
+  "hyperparameters": {
+    "sequence_length": 30,
+    "epochs": 50,
+    "learning_rate": 0.001,
+    "batch_size": 256,
+    "mc_dropout": {
+      "t_passes": 50,
+      "dropout": 0.2
+    },
+    "deep_ensemble": {
+      "seeds": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "dropout": 0.1,
+      "interval_method": "gaussian (mean +/- 1.2816*std)"
+    },
+    "quantile_regression": {
+      "quantiles": [
+        0.1,
+        0.5,
+        0.9
+      ],
+      "dropout": 0.1,
+      "n_quantile_crossings": 0
+    }
+  },
+  "metrics": {
+    "mc_dropout": {
+      "rmse": 14.694564819335938,
+      "coverage": 0.22,
+      "interval_width": 5.254762388110162,
+      "calibration_error": 0.5800000000000001
+    },
+    "deep_ensemble": {
+      "rmse": 13.746162414550781,
+      "coverage": 0.23,
+      "interval_width": 8.001614570617676,
+      "calibration_error": 0.5700000000000001
+    },
+    "quantile_regression": {
+      "rmse": 13.931879997253418,
+      "coverage": 0.72,
+      "interval_width": 26.268823623657227,
+      "calibration_error": 0.08000000000000007
+    }
+  },
+  "best_method": "Quantile Regression",
+  "best_method_reason": "lowest calibration error",
+  "n_test_engines": 100
+}
