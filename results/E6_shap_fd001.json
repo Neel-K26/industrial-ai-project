@@ -1,0 +1,65 @@
+{
+  "experiment_id": "E6",
+  "model": "shap_explainability",
+  "explained_model": "E2_transformer",
+  "explainer": "shap.GradientExplainer",
+  "explainer_note": "shap.DeepExplainer was tried first (per spec) and fails on this architecture: nn.LayerNorm inside nn.TransformerEncoderLayer is unsupported, raising an explicit additivity-check AssertionError. GradientExplainer has no per-layer op whitelist and works correctly on the same model.",
+  "feature_count_note": "Spec described n_sensors=14 with a sensor_1..sensor_14 name mapping, but E2's actual trained model uses all 24 features (3 op-settings + 21 sensors) -- this experiment explains the real E2 model (24 features), per the spec's own 'load E2's architecture' instruction taking precedence.",
+  "dataset": "cmapss",
+  "fd_subset": "FD001",
+  "seed": 42,
+  "hyperparameters": {
+    "sequence_length": 30,
+    "n_background_samples": 100,
+    "nsamples": 200,
+    "n_test_windows_explained": 10196,
+    "n_test_engines": 100
+  },
+  "retrained_model_rmse": 14.59271240234375,
+  "sensor_rankings": {
+    "sensor_11": 0.8916705185100579,
+    "sensor_12": 0.6612383922471521,
+    "sensor_7": 0.6541202053171079,
+    "sensor_13": 0.5992454777980042,
+    "sensor_8": 0.5929246380497272,
+    "sensor_4": 0.5853144315132958,
+    "sensor_9": 0.5265003389689039,
+    "sensor_20": 0.4925958817061964,
+    "sensor_15": 0.4407710833183469,
+    "sensor_2": 0.42556555135242535,
+    "sensor_14": 0.33068460339219946,
+    "sensor_17": 0.3176524452882516,
+    "sensor_21": 0.2824700451775071,
+    "sensor_3": 0.24143448262386777,
+    "op_setting_2": 0.13775469554164876,
+    "op_setting_1": 0.050341022053931574,
+    "sensor_6": 0.0074777837716702425,
+    "op_setting_3": 0.0,
+    "sensor_1": 0.0,
+    "sensor_5": 0.0,
+    "sensor_10": 0.0,
+    "sensor_16": 0.0,
+    "sensor_18": 0.0,
+    "sensor_19": 0.0
+  },
+  "top3_sensors": [
+    "sensor_11",
+    "sensor_12",
+    "sensor_7"
+  ],
+  "top3_sensors_labeled": [
+    "sensor_11 (Ps30: Static pressure at HPC outlet)",
+    "sensor_12 (phi: Ratio of fuel flow to Ps30)",
+    "sensor_7 (P30: Total pressure at HPC outlet)"
+  ],
+  "attribution_stability_score": 0.9899618740306956,
+  "attribution_stability_target_met": true,
+  "n_adjacent_window_pairs": 10096,
+  "shap_values_summary": {
+    "mean_abs": 0.3015733998595967,
+    "std_abs": 0.5178342375350005,
+    "min_abs": 0.0,
+    "max_abs": 11.173445638949396,
+    "median_abs": 0.07411560566228179
+  }
+}

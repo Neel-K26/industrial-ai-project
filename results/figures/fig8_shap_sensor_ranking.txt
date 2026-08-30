@@ -1,0 +1,1 @@
+Figure 8. All 24 input channels ranked by mean absolute SHAP attribution (time- and window-averaged over all 100 FD001 test engines); the top 3 (Ps30, phi, P30) are the sensors E2's Transformer relies on most for its RUL predictions.

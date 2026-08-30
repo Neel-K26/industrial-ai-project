@@ -1,0 +1,1 @@
+Figure 9. Per-cycle SHAP attribution heatmaps for 3 representative FD001 test engines (unit 1: shortest observed trajectory, unit 97: median, unit 49: longest), showing whether and how attribution shifts across each engine's own degradation timeline.

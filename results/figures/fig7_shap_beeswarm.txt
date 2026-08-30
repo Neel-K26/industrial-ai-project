@@ -1,0 +1,1 @@
+Figure 7. SHAP attribution beeswarm for E2's Transformer RUL predictor across a 1500-window sample of all 100 FD001 test engines, time-averaged per window; point color reflects each window's mean raw sensor value, position reflects signed SHAP attribution.
